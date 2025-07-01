@@ -1,0 +1,63 @@
+{
+    "info": {
+        "name": "Node Subscription API Sample",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": "A sample Postman collection to test /subscribe and /send-campaign endpoints."
+    },
+    "item": [
+        {
+            "name": "Subscribe to List",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"demo@user.com\",\n    \"name\": \"Demo User\",\n    \"list\": \"test-list\",\n    \"tag\": \"beta\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/subscribe",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "subscribe"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Send Campaign",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"list\": \"test-list\",\n    \"tag\": \"beta\",\n    \"subject\": \"Beta Access\",\n    \"body\": \"Thanks for being a beta tester!\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/send-campaign",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "send-campaign"
+                    ]
+                }
+            }
+        }
+    ]
+}
